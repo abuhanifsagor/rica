@@ -280,6 +280,7 @@ section {
   background-color: rgba(0, 0, 0, 0.975);
   width: 100%;
   height: auto;
+  position: relative;
   background-image: url(images/suicide-squad-kill-3840x2160-14959.jpeg);
   background-size: cover;
   background-position: center;
@@ -293,6 +294,10 @@ section {
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
   }
+}
+.contactBox{
+ 
+    position: relative;
 }
 .contactBox,.fromBox{
     text-align: center;
