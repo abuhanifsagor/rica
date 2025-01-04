@@ -42,7 +42,6 @@ section {
   top: 0;
   width: 100%;
   z-index: 999;
-  padding-top: 20px;
   background-color: transparent !important;
 }
 .navbar-brand p {
@@ -57,6 +56,7 @@ section {
 
 /* BANNER */
 .topBanner {
+  width: 100%;
   background-image: url("images/mobile-suit-gundam-3840x2160-14869.png");
   background-size: cover;
   background-position: center;
@@ -133,6 +133,12 @@ section {
     .topBannerContent h1{
         font-size: 50px;
         letter-spacing: 5px;
+        
+    }
+    .topBannerContent_text p,
+    .topBannerBottomContent_text p
+    {
+      color: #dedddd;
     }
     
 }
@@ -140,6 +146,12 @@ section {
     .topBannerContent h1{
         font-size: 80px;
         letter-spacing: 12px;
+    }
+    .topBannerContent_text p,
+    .topBannerBottomContent_text p
+    {
+      color: #dedddd;
+
     }
 }
 @media screen and (max-width: 1024px) and (min-width: 768px) {
@@ -154,6 +166,7 @@ section {
         font-size: 150px;
         letter-spacing: 20px;
     }
+
     
 }
 
@@ -211,7 +224,53 @@ section {
     
 }
 /* projects */
+.projectWrapper div{
+ margin-bottom: 40px;
+ transition: 0.3s ease;
+  &:hover{
+   transform: scale(1.2);
+   z-index: 5;
+    transition: 0.3s ease;
+    overflow: hidden;
+  }
+}
+.projectsBottom div:hover {
+  
+      transform: scale(1);
+  
+}
+.offcanvas.show:not(.hiding), .offcanvas.showing {
+  transform: none;
+  height: 100vh;
+}
+button:focus:not(:focus-visible) {
+  outline: 0;
+  box-shadow: none;
+}
+@keyframes boxShadowLoop {
+  0% {
+    box-shadow: 0px -30px 40px 20px rgba(255, 0, 0, 0.25);
+  }
 
+  50% {
+    box-shadow: 0px -30px 40px 20px rgba(0, 0, 255, 0.25);
+  }
+  100% {
+    box-shadow: 0px -30px 40px 20px rgba(255, 0, 0, 0.25);
+
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  transition: 0.3s ease;
+  z-index: 555;
+  background: rgba(87, 87, 87, 0.077) !important;
+  backdrop-filter: blur(3.4px);
+  -webkit-backdrop-filter: blur(3.4px);
+  animation: boxShadowLoop 5s infinite;
+}
 #projects {
   background-color: rgba(0, 0, 0, 0.975);
   width: 100%;
@@ -226,17 +285,29 @@ section {
     transition: 0.3s ease;
     border-radius: 5px;
     -webkit-box-reflect: below 5px -webkit-gradient(linear, left top, left
-          bottom, from(transparent), color-stop(67%, transparent), to(rgba(255, 255, 255, 0.26)));
+          bottom, from(transparent), color-stop(77%, transparent), to(rgba(255, 255, 255, 0.26)));
   }
 }
 .imgBox:nth-child(2) {
   transform: scale(1.2);
+  height: 196px;
+  margin-bottom: 60px;
+  background-image: url(images/p2.jpg);
+  background-size: cover;
+  border-radius: 5px;
   z-index: 2;
+  -webkit-box-reflect: below 5px -webkit-gradient(linear, left top, left
+          bottom, from(transparent), color-stop(77%, transparent), to(rgba(255, 255, 255, 0.26)));
+}
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  .imgBox:nth-child(2){
+    margin-left: 20px;
+  }
+  
 }
 .imgBox:nth-child(1),
 .imgBox:nth-child(3) {
   filter: blur(1px);
-  z-index: 1;
 }
 
 .projectsBottom {
@@ -244,6 +315,9 @@ section {
   margin: auto;
   text-align: center;
   z-index: 3;
+  &:hover{
+    transform: scale(1);
+  }
   h1 {
     color: #ffffff;
     text-align: center;
@@ -331,7 +405,8 @@ section {
 }
 ::placeholder{
     color: white !important;
-}
+    font-family: Arial;
+  }
 .fromBox{
     text-align: center;
     /* From https://css.glass */
